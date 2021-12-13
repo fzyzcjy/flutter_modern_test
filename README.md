@@ -1,10 +1,36 @@
 # `flutter_modern_test`: Modern and elegant test framework for Flutter, inspired by [Cypress](https://www.cypress.io/)
 
-Write down tests as if you are speaking English. *Only* express your business logic, and no more code is needed.
+GitHub: https://github.com/fzyzcjy/flutter_modern_test
 
-As we know, integration tests are fragile and easy to fail. Now, no need to manually write down `for (var i in range(3)) check_that_widget_is_visible();`, and `flutter_modern_test`'s strong retry-ability ([explanation](https://docs.cypress.io/guides/core-concepts/retry-ability)) will automatically retry and make it much more robust. 
+## Why?
 
-```
+Writing tests should be as easy as speaking to a human being about what is expected to happen. No extra  care and code should be made for anything else.
+
+## Finding co-authors
+
+I have long been wishing that Flutter could have a testing framework as productive as [Cypress](https://www.cypress.io/) in JavaScript; but with a long wait there is still none yet. So I write one (many thanks for Cypress's inspiration!).
+
+Obviously, the rich features of Cypress itself are not made by one programmer. Even if I have made the core functionality for this library, there are still many features to add. If you are interested, please contact me (maybe via [GitHub issues](https://github.com/fzyzcjy/flutter_modern_test/issues))!
+
+## Features
+
+* **Human-readable GUI for reviewing and debugging**: See the video below.
+* **Test recording and time travelling**: Look at screenshots of any step of the test. Easily figure out what is happening. Make debugging much easier (at least for me).
+* **Robust with retry-ability**: Integration tests are fragile and easy to fail. Now, the retry-ability ([explanation in Cypress](https://docs.cypress.io/guides/core-concepts/retry-ability)) will automatically retry and make it much more robust. 
+* **Planned: Other features that [Cypress](https://www.cypress.io/) has**: Take a look at their [website](https://www.cypress.io/).
+
+Before I record video of `flutter_modern_test` (since I am not sure whether people are interested in this lib, I do not spend much time on writing readme), please watch this Cypress video and imagine the counterpart...
+
+<p align="center">
+  <a href="https://player.vimeo.com/video/237527670">
+    <img alt="" src="https://user-images.githubusercontent.com/1271364/31739717-dbdff0ee-b41c-11e7-9b16-bfa1b6ac1814.png" width="75%" height="75%" />
+  </a>
+</p>
+## Example
+
+Code looks like:
+
+```dart
 tTestWidgets('test one', (t) async {
   // example: easy-to-read grammar
   await t.login('tom');
@@ -18,17 +44,7 @@ tTestWidgets('test one', (t) async {
 });
 ```
 
-Moreover, you get an UI with **a human-readable view** of what is happening.
-
-In addition, test recording and **time travelling**: Look at screenshot of any previous step, to easily figure out what is happening (and what is going wrong)
-
-Before I record video of `flutter_modern_test` (since I am not sure whether people are interested in this lib, I do not spend much time on writing readme), please watch this Cypress video to know what each feature above means...
-
-<p align="center">
-  <a href="https://player.vimeo.com/video/237527670">
-    <img alt="" src="https://user-images.githubusercontent.com/1271364/31739717-dbdff0ee-b41c-11e7-9b16-bfa1b6ac1814.png" width="75%" height="75%" />
-  </a>
-</p>
+UI looks like: (See that video above)
 
 ## Status
 
@@ -36,6 +52,3 @@ I have used it internally for my app (in production) and it worked well. But to 
 
 The current code repository lacks some trivial internal library dependencies, but of course I will port them here soon.
 
-## Remarks
-
-I have long wished Flutter could have a testing framework that is as productive as [Cypress](https://www.cypress.io/) in JavaScript, so I write one. So many thanks for Cypress, which gives the inspiration of this library!
