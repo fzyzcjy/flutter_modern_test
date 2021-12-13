@@ -1,0 +1,29 @@
+name: test_tool_flutter_dev
+description: A new flutter plugin project.
+version: 0.0.1
+homepage:
+publish_to: none
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  test_tool_flutter:
+    path: ../test_tool_flutter
+  meta: ^1.3.0
+  common_dart_core:
+    path: ../../common_dart_core
+  pedantic: ^1.11.0
+  test_tool_proto:
+    path: ../test_tool_proto
+  web_socket_channel: ^2.1.0
+  test_api: ^0.4.2
+  recase: ^4.0.0-nullsafety.0
+
+dev_dependencies:

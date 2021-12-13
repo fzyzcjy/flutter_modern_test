@@ -1,0 +1,14 @@
+name: test_tool_server
+description: A new flutter plugin project.
+version: 0.0.1
+publish_to: none
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+dependencies:
+  args: ^2.1.0
+  test_tool_proto:
+    path: ../test_tool_proto
+  web_socket_channel: ^2.1.0
+
+dev_dependencies:
+

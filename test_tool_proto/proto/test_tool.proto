@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+message Event {
+    oneof sub_type {
+        TestSystemBoot test_system_boot = 2;
+        LogEntry log_entry = 1;
+        TestEntryInfo test_entry_info = 3;
+        RunnerStateChange runner_state_change = 4;
+        RunnerOnError runner_on_error = 5;
+        RunnerOnMessage runner_on_message = 6;
+        Snapshot snapshot = 7;
+    }
+}
+
+// 测试系统启动
+message TestSystemBoot {
+}
+
+message LogEntry {
+    int32 id = 1;
+    string test_group_name = 2;
+    string test_entry_name = 3;
+    LogEntryType type = 6;
+    string title = 5;
+    string message = 4;
+    string error = 7;
+    string stack_trace = 8;
+}
+
+enum LogEntryType {
+    INVALID = 0;
+    GENERAL_MESSAGE = 1;
+    TEST_START = 2;
+    TEST_BODY = 3;
+    TEST_END = 4;
+    ASSERT = 5;
+    ASSERT_FAIL = 6;
+}
+
+message TestEntryInfo {
+    string test_group_name = 1;
+    string test_entry_name = 2;
+}
+
+message RunnerStateChange {
+    string test_entry_name = 1;
+    TestEntryState state = 2;
+}
+
+message TestEntryState {
+    string status = 1;
+    string result = 2;
+}
+
+message RunnerOnError {
+    string test_entry_name = 1;
+    string error = 2;
+    string stack_trace = 3;
+}
+
+message RunnerOnMessage {
+    string test_entry_name = 1;
+    string message = 2;
+}
+
+message Snapshot {
+    int32 log_entry_id = 1;
+    string name = 2;
+    bytes image = 3;
+}
+
+// https://stackoverflow.com/questions/31768665/can-i-define-a-grpc-call-with-a-null-request-or-response
+message Empty {
+}
