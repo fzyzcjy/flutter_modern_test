@@ -1,3 +1,5 @@
+**Disclaimer**: The code here is outdated (and I have been adding features and refactoring later). If many people want it, I will polish the internal code (e.g. remove internal dependency) and open-source the latest version.
+
 # `flutter_modern_test`: Modern, elegant and productive test framework for Flutter, inspired by [Cypress](https://www.cypress.io/)
 
 GitHub: https://github.com/fzyzcjy/flutter_modern_test
